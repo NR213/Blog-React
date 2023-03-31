@@ -1,5 +1,44 @@
 main{
   padding: 10px;
-  max-width: 500px;
+  max-width: 1000px;
   margin: 0 auto;
+  
+}
+img{
+  max-width: 100%;
+}
+
+div.header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+
+div a{
+  text-decoration: none;
+  color: inherit;
+}
+
+div a.blog{
+  font-weight: bold;
+  font-size: 35px;
+  
+}
+
+div nav{
+  display: flex;
+  gap: 10px;
+}
+
+div.post{
+  display: grid;
+  grid-template-columns: 0.7fr 1fr;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+div.post img{
+ 
+  
 }
