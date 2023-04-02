@@ -17,8 +17,14 @@ function App() {
       <Post />
    </main>
   }/>
-  <Route path={'/login'} element={<Login />} />
-  <Route path={'/register'} element={<Register />} />
+  <Route path={'/login'} element={<main>
+      <Header />
+     <Login />
+   </main>} />
+  <Route path={'/register'} element={<main>
+      <Header />
+     <Register />
+   </main>} />
     </Routes>
    
     
