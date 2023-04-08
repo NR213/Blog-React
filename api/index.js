@@ -9,7 +9,7 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const salt = bcrypt.genSaltSync(10);
 const secret = 'aswedffg45erdfesdwqkh';
-app.use(cors());
+app.use(cors({credentials:true,origin:'http://localhost:3000'}));
 app.use(express.json());
 mongoose.connect('mongodb+srv://ReactBlog:o9zGyUcO77otx8AC@cluster0.ewqlsev.mongodb.net/?retryWrites=true&w=majority');
 app.post('/login',async (req, res) => {
@@ -19,7 +19,7 @@ app.post('/login',async (req, res) => {
     if(passresult){
         jwt.sign({username,id:Docuser._id}, secret, {}, (err, token) => {
             if (err) throw err;
-            res.json(token);
+            res.cookie('token',token).json('ok');
         });
     
     }else{
