@@ -25,6 +25,10 @@ function App() {
       <Header />
      <Register />
    </main>} />
+   <Route path={'/logout'} element={<main>
+      <Header />
+     <Login />
+   </main>} />
     </Routes>
    
     
