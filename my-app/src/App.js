@@ -5,10 +5,11 @@ import Post from './blogpost';
 import {Route, Routes} from "react-router-dom";
 import Login from './login';
 import Register from './register';
+import { UserContextProvider } from './userContext';
 
 function App() {
   return (
-    
+    <UserContextProvider>
     <Routes> 
       <Route index element={ <main>
       <Header />
@@ -25,12 +26,9 @@ function App() {
       <Header />
      <Register />
    </main>} />
-   <Route path={'/logout'} element={<main>
-      <Header />
-     <Login />
-   </main>} />
     </Routes>
-   
+    </UserContextProvider>
+ 
     
   );
 }
