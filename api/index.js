@@ -4,6 +4,8 @@ const app = express();
 const pass = require('./password')
 const cors = require('cors');
 const User = require('./models/user');
+const multer = require('multer');
+const uploadMiddleware = multer({ dest: 'uploads/' });
 const { default: mongoose } = require('mongoose');
 const bcrypt = require('bcryptjs');
 const cookieParser = require('cookie-parser');
@@ -48,12 +50,19 @@ app.get('/profile', (req, res) => {
     jwt.verify(token, secret, {}, (err, info) =>{
         if (err) throw err;
         res.json(info);
-    })
-})
+    });
+});
 
 app.post('/logout', (req, res) => {
     res.cookie('token','').json('ok');
-})
+});
+
+app.post('/post', uploadMiddleware.single('file'), (req, res) => {
+    const {originalname} = req.file;
+    const part = originalname.split('.');
+    const ext = part[part.length - 1];
+   res.json({ext});
+});
 
 app.listen(4000);
 

@@ -22,16 +22,19 @@ export default function Createpost(){
     const [content, setContent] = useState('');
     const [files, setFiles] = useState('');
 
-    function createNewPost(ev){
-        const data = FormData();
-        data.set('title',title)
-        data.set('author',author)
-        data.set('content',content)
-        data.set('files',files[0])
-        fetch('http://localhost:4000/post', {
-            method: 'POST',
-            body: data,
-        })
+   async function createNewPost(ev){
+       ev.preventDefault();
+        const data = new FormData();
+        data.set('title',title);
+        data.set('author',author);
+        data.set('content',content);
+        data.set('file',files[0]);
+        
+      const response = await fetch('http://localhost:4000/post', {
+          method: 'POST',
+          body: data,
+        });
+        console.log(response.json());
     }
 
     return(
