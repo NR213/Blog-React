@@ -1,37 +1,23 @@
 import logo from './logo.svg';
 import './App.css';
 import Header from './navbar.js';
-import Post from './blogpost';
 import {Route, Routes} from "react-router-dom";
-import Login from './login';
-import Register from './register';
+import Login from './pages/login';
+import Register from './pages/register';
 import Createpost from './pages/createpost';
 import { UserContextProvider } from './userContext';
-
+import Layout from './pages/layout';
+import IndexPage from './pages/IndexPage';
 function App() {
   return (
     <UserContextProvider>
     <Routes> 
-      <Route index element={ <main>
-      <Header />
-      <Post />
-      <Post />
-      <Post />
-   </main>
-  }/>
-  <Route path={'/login'} element={<main>
-      <Header />
-     <Login />
-   </main>} />
-  <Route path={'/register'} element={<main>
-      <Header />
-     <Register />
-   </main>} />
-    
-    <Route path={'/create'} element={<main>
-      <Header />
-     <Createpost />
-   </main>} />
+    <Route path="/" element={<Layout />}>
+    <Route index element={<IndexPage />} />
+  <Route path={'/login'} element={<Login />}/>
+  <Route path={'/register'} element={<Register />}/>
+  <Route path={'/create'} element={<Createpost />} />
+   </Route>
    </Routes>
     </UserContextProvider>
  

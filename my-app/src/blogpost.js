@@ -1,13 +1,13 @@
-export default function Post() {
+export default function Post({title, name, content, cover, author}) {
     return(
         <div className="post">
             <div className="image">
-            <img src= "https://detailed.com/images/bill-board.jpg"></img>
+            <img src= {cover}></img>
             </div>
         <div className="text">
-            <h2>Billboard</h2>
-            <h4>author</h4>
-            <p>Best known for the Hot 100 and Billboard 200, which list the most popular songs and albums each week in the industry. Offers industry news, events, podcasts, and music streaming.</p>
+            <h2>{title}</h2>
+            <h4>By {author.username}</h4>
+            <p>{content}</p>
         </div>
         </div>
     );
