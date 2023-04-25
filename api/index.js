@@ -17,6 +17,7 @@ const secret = 'aswedffg45erdfesdwqkh';
 app.use(cors({credentials:true,origin:'http://localhost:3000'}));
 app.use(express.json());
 app.use(cookieParser());
+app.use('/uploads', express.static(__dirname + '/uploads'));
 mongoose.connect('mongodb+srv://ReactBlog:Tr7WJB6fA7ahiJRF@cluster0.ewqlsev.mongodb.net/?retryWrites=true&w=majority');
 app.post('/login',async (req, res) => {
     const {username, password} = req.body;
@@ -85,8 +86,15 @@ app.post('/post', uploadMiddleware.single('file'), async (req, res) => {
 });
 
 app.get('/post', async (req, res) => {
-    res.json(await post.find().populate('author', ['username']));
+    res.json(await post.find().populate('author', ['username']).sort({createdAt: -1}).limit(20));
 });
+
+app.get('/post/:id', async (req, res) => {
+    const {id} = req.params;
+    const postDoc = await post.findById(id).populate('author', ['username']);
+    res.json(postDoc);
+});
+
 
 app.listen(4000);
 
