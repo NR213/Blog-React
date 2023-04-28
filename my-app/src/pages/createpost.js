@@ -50,7 +50,7 @@ export default function Createpost(){
             <input type="title" placeholder="title" value = {title} onChange = {ev => setTitle(ev.target.value)}></input>
             <input type="text" placeholder="summary" value = {name} onChange = {ev => setName(ev.target.value)}></input>
             <input type="file"  onChange = {ev => setFiles(ev.target.files)}></input>
-            <ReactQuill value={content} onChange = {newValue => setContent(newValue)} modules={modules}/>
+            <ReactQuill value={content} theme="snow" onChange = {newValue => setContent(newValue)} modules={modules}/>
             <button >Create post</button>
         </form>
     );

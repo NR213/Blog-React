@@ -109,7 +109,7 @@ div.postpage div.image{
  }
 
  div.postpage h4{
-  padding-left:30px ;
+  padding-left:20px ;
   margin: 0;
   text-align: left;
  align-items: normal;
@@ -125,3 +125,23 @@ div.postpage h1{
  
  
 }
+
+div.postpage div.edit a{
+  background-color: #333;
+  display: inline-block;
+  border-radius: 5px;
+  color: #fff;
+  padding: 5px 10px;
+  margin-left: 10px;
+  align-items: center;
+  gap: 10px;
+  margin-top: 5px;
+ 
+}
+
+
+a svg{
+  height: 18px;
+  
+}
+

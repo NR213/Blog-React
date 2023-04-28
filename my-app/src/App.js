@@ -9,6 +9,7 @@ import { UserContextProvider } from './userContext';
 import Layout from './pages/layout';
 import IndexPage from './pages/IndexPage';
 import Postpage from './pages/postpage';
+import Editpage from './pages/editpage';
 function App() {
   return (
     <UserContextProvider>
@@ -19,6 +20,7 @@ function App() {
   <Route path={'/register'} element={<Register />}/>
   <Route path={'/create'} element={<Createpost />} />
   <Route path="/post/:id" element={<Postpage />} />
+  <Route path={'/edit/:id'} element={<Editpage />} />
    </Route>
    </Routes>
     </UserContextProvider>
