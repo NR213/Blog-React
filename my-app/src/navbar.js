@@ -37,14 +37,28 @@ export default function Header() {
             <nav>
                 {username && (
                     <>
-                    <Link to="/create">Create a Blog!!</Link>
-                    <a  href = "/login" onClick={logout}>Logout</a>
+                    <Link to="/create"><button className="navbut">
+  <span class="button_top"> Create a post!!
+  </span>
+</button></Link>
+                    <a  href = "/login" onClick={logout}><button className="navbut">
+  <span class="button_top"> Logout
+  </span>
+</button></a>
                     </>
                 )}
                 {!username && (
                     <>
-                   <Link to="/login">Login</Link>
-                   <Link to="/register">Register</Link>     
+                   <Link to="/login">
+                   <button className="navbut">
+  <span class="button_top"> Login
+  </span>
+</button>
+                   </Link>
+                   <Link to="/register"><button className="navbut">
+  <span class="button_top"> Register
+  </span>
+</button></Link>     
                    </>
                 )}
             

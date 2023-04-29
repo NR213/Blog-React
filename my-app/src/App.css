@@ -7,8 +7,12 @@ main{
   margin: 0 auto;
   
 }
+body{
+  background-image: url("C:\Users\admin\Documents\jonatan-pie-3l3RwQdHRHg-unsplash.jpg");
+}
 img{
   max-width: 100%;
+  border-radius: 25px;
 }
 
 div.header{
@@ -26,6 +30,7 @@ div a{
 div a.blog{
   font-weight: bold;
   font-size: 35px;
+  color: #fff;
   
 }
 
@@ -34,18 +39,20 @@ div nav{
   gap: 10px;
 }
 
+
+
 div.post{
   display: grid;
   grid-template-columns: 1fr 1.1fr;
   gap: 20px;
-  
+  text-align: center;
   margin-bottom: 30px;
 }
 
-form.login, form.register {
+/* form.login, form.register {
   max-width: 500px;
   margin: 0 auto;
-}
+} */
 
 form input{
   display: block;
@@ -55,19 +62,9 @@ form input{
   border-radius: 5px;
   background-color: #fff;
   padding: 5px 7px;
-}
+} 
 
-form.login button, form.register button{
-  display: block;
-  width: 100%;
-  border-radius: 5px;
-  border: 2px solid #ddd;
- 
-  background-color: #555;
-  color: #ddd;
-  padding: 7px 0;
-  
-}
+
 
 form.createpost button{
   display: block;
@@ -83,9 +80,9 @@ form.createpost button{
   
 }
 
-form.login h1, form.register h1{
+/* form.login h1, form.register h1{
   text-align: center;
-}
+} */
 div.postpage h1{
   margin-top: 50px;
   margin-bottom: 50px;
@@ -145,3 +142,243 @@ a svg{
   
 }
 
+button{
+  --primary-color: #645bff;
+  --secondary-color: #fff;
+  --hover-color: #111;
+  --arrow-width: 10px;
+  --arrow-stroke: 2px;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 20px;
+  color: var(--secondary-color);
+  padding: 1em 1.8em;
+  background: var(--primary-color);
+  display: flex;
+  transition: 0.2s background;
+  align-items: center;
+  gap: 0.6em;
+  font-weight: bold;
+  
+  
+}
+
+
+button .arrow-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button .arrow {
+  margin-top: 1px;
+  width: var(--arrow-width);
+  background: var(--primary-color);
+  height: var(--arrow-stroke);
+  position: relative;
+  transition: 0.2s;
+}
+
+button .arrow::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  border: solid var(--secondary-color);
+  border-width: 0 var(--arrow-stroke) var(--arrow-stroke) 0;
+  display: inline-block;
+  top: -3px;
+  right: 3px;
+  transition: 0.2s;
+  padding: 3px;
+  transform: rotate(-45deg);
+}
+
+button:hover {
+  background-color: var(--hover-color);
+}
+
+button:hover .arrow {
+  background: var(--secondary-color);
+}
+
+button:hover .arrow:before {
+  right: 0;
+}
+
+.form {
+  background-color: #fff;
+  display: block;
+  padding: 1rem;
+  max-width: 350px;
+  border-radius: 0.5rem;
+  margin-left: 310px;
+  margin-top: 130px;
+  text-align: center;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.form-title {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+  text-align: center;
+  color: #000;
+}
+
+.input-container {
+  position: relative;
+}
+
+.input-container input, .form button {
+  outline: none;
+  border: 1px solid #e5e7eb;
+  margin: 8px 0;
+}
+
+form.form div.loginbutton{
+  margin-left: 100px;
+}
+
+form.form div.regbutton{
+  
+  margin-left: 90px;
+}
+
+.input-container input {
+  background-color: #fff;
+  padding: 1rem;
+  padding-right: 3rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  width: 300px;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.input-container span {
+  display: grid;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  place-content: center;
+}
+
+.input-container span svg {
+  color: #9CA3AF;
+  width: 1rem;
+  height: 1rem;
+}
+
+.submit {
+  display: flex;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  background-color: #4F46E5;
+  color: #ffffff;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  
+  border-radius: 0.5rem;
+  text-transform: uppercase;
+}
+
+.signup-link {
+  color: #6B7280;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  text-align: center;
+}
+
+.signup-link a {
+  text-decoration: underline;
+}
+
+.cookie-card {
+  max-width: 600px;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 20px 20px 30px rgba(0, 0, 0, .05);
+}
+
+.title {
+  font-weight: 600;
+  color: rgb(31 41 55);
+}
+
+.description {
+  margin-top: 1rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: rgb(0, 0, 0);
+}
+
+.description a {
+  --tw-text-opacity: 1;
+  color: rgb(59 130 246);
+}
+
+.description a:hover {
+  -webkit-text-decoration-line: underline;
+  text-decoration-line: underline;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1rem;
+  -moz-column-gap: 1rem;
+  column-gap: 1rem;
+  flex-shrink: 0;
+}
+
+.pref {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  color: rgb(31 41 55 );
+  -webkit-text-decoration-line: underline;
+  text-decoration-line: underline;
+  transition: all .3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: none;
+  background-color: transparent;
+}
+
+.pref:hover {
+  color: rgb(156 163 175);
+}
+
+.pref:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.accept {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  background-color: rgb(17 24 39);
+  font-weight: 500;
+  border-radius: 0.5rem;
+  color: #fff;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.625rem;
+  padding-bottom: 0.625rem;
+  border: none;
+  transition: all .15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.accept:hover {
+  background-color: rgb(55 65 81);
+}
+
+.accept:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
